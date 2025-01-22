@@ -3,10 +3,20 @@
 {% block title %}Testing{% endblock %}
 
 {% block content %}
-<ul>
+<p>My name is {{first_name}} {{last_name}}</p>
+
+{% if if_var == 1%}
+<p>The if_var is 0</p>
+{%else%}
+<p>The if_var is not 0</p>
+{% endif %}
+
+{% with firstname="Tobias" %}
+ <ul>
 {% for fruit in fruits %}
-<li>{{ fruit }}</li>
+<li>{{ fruit }} {{ firstname }}</li>
 {% endfor %}
+{% endwith %}
 </ul>
 {% endblock %}
 
